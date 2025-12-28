@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xelion Bot Documentation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js"></script>
+  </head>
+
+  <body class="bg-discord-bg text-discord-text font-sans antialiased">
+    <div
+      class="md:hidden flex items-center justify-between p-4 bg-discord-sidebar border-b border-gray-700 fixed w-full z-50"
+    >
+      <span class="font-bold text-xl text-white"
+        >XELION <span class="text-discord-blurple">DOCS</span></span
+      >
+      <button onclick="toggleMenu()" class="text-white focus:outline-none">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+
+    <div class="flex min-h-screen pt-16 md:pt-0">
+      <aside
+        id="sidebar"
+        class="hidden md:flex flex-col w-64 h-screen fixed bg-discord-sidebar border-r border-gray-700 overflow-y-auto z-40"
+      >
+        <div class="p-6 border-b border-gray-700">
+          <h1 class="text-2xl font-bold text-white tracking-wider">XELION</h1>
+          <p class="text-xs text-gray-400 mt-1">v1.0.0 Stable</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+          <a
+            href="#intro"
+            class="flex items-center gap-3 px-4 py-3 rounded hover:bg-discord-blurple hover:text-white transition"
+          >
+            <i class="fas fa-rocket w-5 text-center"></i> Intro
+          </a>
+          <a
+            href="#ai"
+            class="flex items-center gap-3 px-4 py-3 rounded hover:bg-discord-blurple hover:text-white transition"
+          >
+            <i class="fas fa-brain w-5 text-center"></i> AI & Chat
+          </a>
+          <a
+            href="#fun"
+            class="flex items-center gap-3 px-4 py-3 rounded hover:bg-discord-blurple hover:text-white transition"
+          >
+            <i class="fas fa-gamepad w-5 text-center"></i> Hiburan
+          </a>
+          <a
+            href="#info"
+            class="flex items-center gap-3 px-4 py-3 rounded hover:bg-discord-blurple hover:text-white transition"
+          >
+            <i class="fas fa-book w-5 text-center"></i> Informasi
+          </a>
+          <a
+            href="#utils"
+            class="flex items-center gap-3 px-4 py-3 rounded hover:bg-discord-blurple hover:text-white transition"
+          >
+            <i class="fas fa-tools w-5 text-center"></i> Utilitas
+          </a>
+          <a
+            href="https://github.com/Edzard9/XELION-DISCORD-BOT"
+            target="_blank"
+            class="mt-8 flex items-center gap-3 px-4 py-3 rounded border border-gray-600 hover:border-discord-blurple hover:text-white transition"
+          >
+            <i class="fab fa-github w-5 text-center"></i> View Repo
+          </a>
+        </nav>
+      </aside>
+
+      <main class="flex-1 md:ml-64 p-6 md:p-12 max-w-5xl mx-auto">
+        <section id="intro" class="mb-12 scroll-mt-24">
+          <div
+            class="bg-gradient-to-r from-discord-blurple/20 to-transparent p-8 rounded-xl border-l-4 border-discord-blurple"
+          >
+            <h1 class="text-4xl font-bold text-white mb-4">
+              Xelion Bot Documentation
+            </h1>
+            <p class="text-lg text-gray-300">
+              Bot multipurpose lengkap dengan fitur AI, Game, Informasi, dan
+              Utilitas Crypto. Gunakan prefix
+              <code
+                class="bg-black/50 px-2 py-1 rounded text-discord-yellow font-mono font-bold"
+                >$</code
+              >
+              untuk memulai.
+            </p>
+          </div>
+        </section>
+
+        <section id="ai" class="mb-12 scroll-mt-24">
+          <h2
+            class="text-2xl font-bold text-discord-header mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-brain text-purple-400"></i> AI & Chat
+          </h2>
+          <div class="grid grid-cols-1 gap-4">
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-2"
+              >
+                <code class="text-discord-blurple font-bold text-lg"
+                  >$ask &lt;pesan&gt;</code
+                >
+                <span
+                  class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded w-fit"
+                  >Artificial Intelligence</span
+                >
+              </div>
+              <p class="text-gray-400 mt-2">
+                Tanya apa saja ke AI. Bot akan menjawab pertanyaanmu secara
+                cerdas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="fun" class="mb-12 scroll-mt-24">
+          <h2
+            class="text-2xl font-bold text-discord-header mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-gamepad text-orange-400"></i> Hiburan & Game
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg">$meme</code>
+              <p class="text-gray-400 mt-2">
+                Dapatkan meme random yang lucu dari internet.
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg">$slot</code>
+              <p class="text-gray-400 mt-2">
+                Mainkan mesin slot virtual untuk menguji keberuntunganmu. Hanya
+                untuk hiburan saja!!
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg">$wyr</code>
+              <p class="text-gray-400 mt-2">
+                Would You Rather? Pilih antara dua pilihan sulit.
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg"
+                >$funfact</code
+              >
+              <p class="text-gray-400 mt-2">
+                Tampilkan satu fakta menarik yang jarang diketahui orang.
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700 md:col-span-2"
+            >
+              <code class="text-discord-blurple font-bold text-lg">$quote</code>
+              <p class="text-gray-400 mt-2">Dapatkan kutipan motivasi acak.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="quiz" class="mb-12 scroll-mt-24">
+          <h2
+            class="text-2xl font-bold text-discord-header mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-puzzle-piece text-yellow-400"></i> Kuis Trivia
+          </h2>
+          <div class="grid grid-cols-1 gap-4">
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700 flex flex-col gap-2"
+            >
+              <div>
+                <code class="text-discord-blurple font-bold text-lg"
+                  >$quiz</code
+                >
+                <p class="text-gray-400 text-sm">
+                  Mulai sesi kuis tebak-tebakan baru.
+                </p>
+              </div>
+              <div class="border-t border-gray-700 pt-2 mt-2">
+                <code class="text-discord-blurple font-bold text-lg"
+                  >$jawab &lt;jawaban&gt;</code
+                >
+                <p class="text-gray-400 text-sm">
+                  Kirim jawabanmu untuk pertanyaan kuis yang aktif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="info" class="mb-12 scroll-mt-24">
+          <h2
+            class="text-2xl font-bold text-discord-header mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-book text-blue-400"></i> Informasi & Edukasi
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg"
+                >$kbbi &lt;kata&gt;</code
+              >
+              <p class="text-gray-400 mt-2">
+                Cari definisi resmi kata dalam Kamus Besar Bahasa Indonesia.
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <code class="text-discord-blurple font-bold text-lg"
+                >$wiki &lt;topik&gt;</code
+              >
+              <p class="text-gray-400 mt-2">
+                Cari ringkasan cepat dari Wikipedia tentang topik tertentu.
+              </p>
+            </div>
+            <div
+              class="cmd-card bg-discord-sidebar p-5 rounded-lg border border-gray-700 md:col-span-2"
+            >
+              <code class="text-discord-blurple font-bold text-lg"
+                >$translate &lt;teks&gt;</code
+              >
+              <p class="text-gray-400 mt-2">
+                Terjemahkan teks asing ke Bahasa Indonesia secara instan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="utils" class="mb-24 scroll-mt-24">
+          <h2
+            class="text-2xl font-bold text-discord-header mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-tools text-green-400"></i> Utilitas & Tools
+          </h2>
+          <div class="space-y-4">
+            <div
+              class="bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <h3
+                class="text-white font-semibold mb-3 border-b border-gray-700 pb-2"
+              >
+                <i class="fas fa-clock mr-2"></i>Waktu & Reminder
+              </h3>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <code class="text-discord-blurple font-bold"
+                    >$reminder &lt;angka&gt;&lt;s/m&gt; &lt;pesan&gt;</code
+                  >
+                  <p class="text-gray-400 text-sm mt-1">
+                    Set pengingat. <br /><span class="text-xs text-gray-500"
+                      >Contoh: $reminder 10m Matikan kompor</span
+                    >
+                  </p>
+                </div>
+                <div>
+                  <code class="text-discord-blurple font-bold"
+                    >$timer &lt;detik&gt;</code
+                  >
+                  <p class="text-gray-400 text-sm mt-1">
+                    Hitung mundur sederhana dengan durasi detik.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <h3
+                class="text-white font-semibold mb-3 border-b border-gray-700 pb-2"
+              >
+                <i class="fas fa-chart-line mr-2"></i>Polling & Finansial
+              </h3>
+              <div class="space-y-4">
+                <div class="flex flex-col md:flex-row justify-between">
+                  <div>
+                    <code class="text-discord-blurple font-bold block mb-1"
+                      >$poll &lt;pertanyaan&gt;</code
+                    >
+                    <p class="text-gray-400 text-sm">
+                      Buat polling instan dengan reaksi voting.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col md:flex-row justify-between border-t border-gray-700 pt-3"
+                >
+                  <div>
+                    <code class="text-discord-blurple font-bold block mb-1"
+                      >$convert &lt;jml&gt; &lt;dari&gt; &lt;ke&gt;</code
+                    >
+                    <p class="text-gray-400 text-sm">
+                      Konversi mata uang.
+                      <span class="text-xs text-gray-500"
+                        >(Ex: $convert 10 USD IDR)</span
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col md:flex-row justify-between border-t border-gray-700 pt-3"
+                >
+                  <div>
+                    <code class="text-discord-blurple font-bold block mb-1"
+                      >$crypto &lt;coin&gt;</code
+                    >
+                    <p class="text-gray-400 text-sm">
+                      Cek harga pasar cryptocurrency saat ini.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-discord-sidebar p-5 rounded-lg border border-gray-700"
+            >
+              <h3
+                class="text-white font-semibold mb-3 border-b border-gray-700 pb-2"
+              >
+                <i class="fas fa-images mr-2"></i>Galeri Antarmuka
+              </h3>
+
+              <div class="relative group">
+                <button
+                  onclick="scrollSlider(-1)"
+                  class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div
+                  id="slider-container"
+                  class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 rounded-xl border border-gray-800"
+                >
+                  <div class="min-w-full snap-center">
+                    <img
+                      src="/images/example.png"
+                      class="w-full h-auto object-cover rounded-xl"
+                      alt="Preview 1"
+                    />
+                    <p class="text-center text-xs text-gray-500 mt-2"></p>
+                  </div>
+
+                  <div class="min-w-full snap-center">
+                    <img
+                      src="/images/example2.png"
+                      class="w-full h-auto object-cover rounded-xl"
+                      alt="Preview 2"
+                    />
+                    <p class="text-center text-xs text-gray-500 mt-2"></p>
+                  </div>
+
+                  <div class="min-w-full snap-center">
+                    <img
+                      src="/images/example3.png"
+                      class="w-full h-auto object-cover rounded-xl"
+                      alt="Preview 3"
+                    />
+                    <p class="text-center text-xs text-gray-500 mt-2"></p>
+                  </div>
+                </div>
+
+                <button
+                  onclick="scrollSlider(1)"
+                  class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition duration-300"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <p class="text-center text-xs text-gray-500 mt-4">
+                Geser untuk melihat contoh tampilan lainnya.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer
+          class="text-center text-gray-500 text-sm pb-8 border-t border-gray-800 pt-8"
+        >
+          <p>&copy; 2025 Xelion Bot. All rights reserved.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

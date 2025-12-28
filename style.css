@@ -1,0 +1,195 @@
+/* RESET CSS & FONT UTAMA */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #1d1d1f; /* Hampir Hitam */
+  background-color: #ffffff; /* Putih Bersih */
+  line-height: 1.6;
+}
+
+/* CONTAINER UTAMA */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5em; /* Jarak samping */
+}
+
+/* HEADER / NAVIGATION BAR */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #d2d2d7; /* Garis tipis */
+  backdrop-filter: blur(10px); /* Efek blur ala iOS */
+  padding: 0.8em 0;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #1d1d1f;
+}
+
+#nav a {
+  color: #555;
+  margin-left: 2em;
+  font-size: 1em;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+#nav a:hover,
+#nav a.active {
+  color: #007aff; /* Biru Aksen */
+}
+
+/* SECTION UMUM (White Space Ala Apple) */
+section {
+  padding: 8em 0; /* Jarak vertikal yang luas */
+}
+
+section h2 {
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* INTRO / HERO SECTION */
+#intro {
+  text-align: center;
+  padding: 10em 0;
+}
+
+#intro h1 {
+  font-size: 4em;
+  font-weight: 800;
+  margin-bottom: 0.2em;
+}
+
+#intro p {
+  font-size: 1.5em;
+  color: #555;
+  margin-bottom: 2em;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1em 2em;
+  background: #007aff;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.cta-button:hover {
+  opacity: 0.8;
+}
+
+/* KETERAMPILAN */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2em;
+  text-align: center;
+}
+
+.skill-item h3 {
+  margin-top: 0.5em;
+  font-weight: 600;
+}
+
+/* PROYEK (PORTFOLIO) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3em;
+}
+
+.project-card {
+  background: #f5f5f7;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Shadow tipis */
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5em;
+}
+
+.project-info h3 {
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  color: #1d1d1f;
+}
+
+.project-info p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* KONTAK */
+#contact {
+  text-align: center;
+  background: #f5f5f7;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 1em;
+  color: #1d1d1f;
+  font-size: 2em;
+}
+
+/* FOOTER */
+#footer {
+  text-align: center;
+  padding: 2em 0;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Responsiveness Sederhana */
+@media (max-width: 768px) {
+  #intro h1 {
+    font-size: 3em;
+  }
+  section {
+    padding: 4em 0;
+  }
+  #nav a {
+    margin-left: 1em;
+  }
+  #nav {
+    display: none; /* Sembunyikan navigasi di HP, bisa diganti dengan menu burger */
+  }
+  #header .container {
+    justify-content: center;
+  }
+}

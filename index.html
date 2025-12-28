@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tony - Portofolio</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <span id="logo">Tony's Portfolio</span>
+        <nav id="nav">
+          <a href="#intro" class="active">Tentang Saya</a>
+          <a href="#skills">Keterampilan</a>
+          <a href="#projects">Portofolio</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <section id="intro" class="container">
+      <div data-aos="fade-up">
+        <h1>Satu Developer. Dua Solusi Platform.</h1>
+        <p>
+          Membutuhkan performa aplikasi Windows (Desktop) yang tangguh? Atau
+          jangkauan Website yang luas? Saya membangun keduanya. Menguasai
+          ekosistem Python untuk menciptakan perangkat lunak yang presisi, di
+          platform mana pun yang Anda butuhkan.
+        </p>
+        <a href="#projects" class="cta-button">Lihat Proyek Saya</a>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2 data-aos="fade-up">Keterampilan Utama Saya</h2>
+      <div class="skills-grid">
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+          <span style="font-size: 3em">🏗️</span>
+          <h3>Spesialisasi Framework</h3>
+          <p>Python, Django, Flask.</p>
+        </div>
+
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+          <span style="font-size: 3em">🗄️</span>
+          <h3>Database & Query</h3>
+          <p>MariaDB, MySQL, Database Design (ERD)</p>
+        </div>
+
+        <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+          <span style="font-size: 3em">🔗</span>
+          <h3>Frontend & Tools</h3>
+          <p>
+            Figma (UI/UX Prototyping), Git & GitHub (Version Control),
+            Responsive Web Design, HTML5, CSS3, & Bootstrap
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container">
+      <h2 data-aos="fade-up">Karya Pilihan (Portofolio)</h2>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="zoom-in">
+          <img src="images/project-1.png" alt="Bot discord" />
+          <div class="project-info">
+            <h3>Bot discord</h3>
+            <p>
+              Membangun Bot discord dengan Python yang mengelola 50.000+
+              interaksi harian. Merancang PostgreSQL untuk penyimpanan data
+              pengguna yang andal dan responsif melalui Discord API.
+            </p>
+            <a href="portofolio_0/index.html" target="_blank"
+              >Lihat Detail Proyek &rarr;</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="images/project-2.png" alt="NetSentinel Monitor" />
+          <div class="project-info">
+            <h3>NetSentinel</h3>
+            <p>
+              Menciptakan tool monitoring server berbasis web yang aman dengan
+              mekanisme Dynamic IP Binding. Menyajikan metrik vital CPU, GPU,
+              dan RAM melalui antarmuka responsif yang dapat diakses instan via
+              mobile.
+            </p>
+            <a href="portofolio_1/index.html" target="_blank"
+              >Lihat Detail Proyek &rarr;</a
+            >
+          </div>
+        </div>
+
+        <!-- TAMBAHKAN INI SETELAH PROJECT KE-3 -->
+        <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+          <img src="images/project-4.png" alt="Haytech Store" />
+          <div class="project-info">
+            <h3>Sistem Manajemen Toko Komputer</h3>
+            <p>
+              Aplikasi full-stack untuk manajemen inventaris dan POS toko
+              komputer dengan fitur QR code scanning dan laporan real-time.
+            </p>
+            <a href="portofolio_2/index.html" target="_blank"
+              >Lihat Aplikasi &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <h2>Mari Berkolaborasi!</h2>
+        <p style="margin-bottom: 2em; font-size: 1.1em">
+          Jika Anda memiliki proyek menarik atau ingin berdiskusi, jangan ragu
+          untuk menghubungi saya.
+        </p>
+        <div class="social-links">
+          <a href="muhammadilhamfathonysulton@gmail.com" title="Email"
+            ><span style="font-size: 2em">✉️</span></a
+          >
+          <a
+            href="https://linkedin.com/in/Toni-ilham"
+            target="_blank"
+            title="LinkedIn"
+            ><span style="font-size: 2em">🔗</span></a
+          >
+          <a href="https://github.com/Edzard9" target="_blank" title="GitHub"
+            ><span style="font-size: 2em">🐙</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">&copy; 2025 Tony. All rights reserved.</div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

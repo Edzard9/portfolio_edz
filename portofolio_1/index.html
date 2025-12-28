@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dokumentasi NetSentinel | Lightweight Server Monitor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">NET<span>SENTINEL</span></div>
+      <div class="nav-links">
+        <a href="#features">Fitur</a>
+        <a href="#install">Cara Pakai</a>
+        <a href="#gallery">Galeri</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="status-badge">● Sistem Teroptimasi untuk Low-End Server</div>
+      <h1>Monitoring Cerdas Tanpa Membebani Hardware</h1>
+      <p>
+        Dashboard real-time untuk memantau kesehatan server kecil Anda. CPU,
+        RAM, GPU, dan Storage dalam satu tampilan terpusat.
+      </p>
+    </section>
+
+    <div class="container" id="features">
+      <div class="section-title">
+        <h2>Kapabilitas Monitoring</h2>
+        <p class="subtitle">
+          Dirancang spesifik untuk transparansi resource hardware.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="card" style="border-color: var(--accent-color)">
+          <div class="card-icon">🤖</div>
+          <h3>AI System Advisor</h3>
+          <p>
+            Asisten cerdas yang menganalisa
+            <strong>tingkat stres server</strong> (beban kerja & durasi uptime).
+          </p>
+          <div class="tech-spec">
+            Status: [OPTIMAL]<br />
+            Stress Analysis: Low (12%)<br />
+            > Next Restart: 13 Hari Lagi
+          </div>
+          <p class="small-note">
+            Memberikan rekomendasi waktu restart yang tepat secara prediktif
+            untuk mencegah <i>lag</i> atau <i>freeze</i> akibat akumulasi beban.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Hardware Vital Stats</h3>
+          <p>Memantau metrik krusial secara real-time:</p>
+          <ul class="feature-list">
+            <li><strong>CPU Usage:</strong> Total load & Frekuensi (GHz).</li>
+            <li>
+              <strong>RAM:</strong> Persentase & total kapasitas terpakai.
+            </li>
+            <li>
+              <strong>Storage:</strong> Status partisi SSD/HDD (C:\, D:\, dll).
+            </li>
+            <li>
+              <strong>GPU & VRAM:</strong> Beban grafis untuk server rendering.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🧠</div>
+          <h3>Visualisasi CPU Multi-Core</h3>
+          <p>Mendeteksi distribusi beban kerja pada setiap inti prosesor.</p>
+          <div class="tech-spec">
+            [ C0: 15% ] [ C1: 8% ] [ C2: 90% ]<br />
+            > Visualisasi Bar Chart per Core<br />
+            > Deteksi Bottleneck Single-thread
+          </div>
+          <p class="small-note">
+            Memungkinkan admin melihat apakah server bekerja seimbang atau hanya
+            membebani satu core tertentu.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔍</div>
+          <h3>Top 5 Resource Hoggers</h3>
+          <p>
+            Tabel dinamis yang menampilkan 5 program teratas yang paling rakus
+            resource.
+          </p>
+          <div class="tech-spec">
+            PID &nbsp;&nbsp; NAME
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CPU%<br />
+            14684 &nbsp;explorer.exe &nbsp;&nbsp; 4.7%<br />
+            24748 &nbsp;chrome.exe &nbsp;&nbsp; &nbsp; 3.6%
+          </div>
+          <p class="small-note">
+            Membantu mengidentifikasi proses zombie atau memory leak dengan
+            cepat.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Dynamic IP Safe-Guard</h3>
+          <p>
+            Menggunakan mekanisme <strong>Dynamic Binding</strong> untuk alokasi
+            jaringan.
+          </p>
+          <div class="tech-spec">
+            Binding: 0.0.0.0 / Auto<br />
+            Conflict Check: [PASS]<br />
+            > No Static IP Clash
+          </div>
+          <p class="small-note">
+            Aman dijalankan bersamaan layanan lain. Tool ini tidak akan
+            mengganggu IP statis atau layanan web yang sedang berjalan.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🍃</div>
+          <h3>Ultra-Low Overhead</h3>
+          <p>
+            Dibangun dengan arsitektur yang hemat resource. Monitoring tool ini
+            tidak akan menjadi penyebab server lambat.
+          </p>
+          <p class="small-note">
+            Aplikasi berjalan portable tanpa instalasi dependencies yang berat.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <div class="container" id="install">
+      <div class="card install-card">
+        <h3 class="accent-text">🚀 Cara Menjalankan (Portable)</h3>
+        <p style="margin-bottom: 1rem">
+          Aplikasi ini bersifat <i>portable</i>. Cukup unduh dan jalankan tanpa
+          perlu instalasi Python atau config database.
+        </p>
+        <div class="tech-spec code-block">
+          <span class="comment"># 1. Jalankan file aplikasi</span><br />
+          > Klik 2x pada file <strong>NetSentinel_Monitor.exe</strong
+          ><br /><br />
+          <span class="comment"># 2. Console Server akan terbuka</span><br />
+          > Akan muncul QR Code dan Alamat IP Lokal (misal: 192.168.1.4)<br /><br />
+          <span class="comment"># 3. Akses Monitoring</span><br />
+          > Scan QR Code dengan HP atau ketik IP di browser PC lain.
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="gallery">
+      <div class="section-title">
+        <h2>Galeri Aplikasi</h2>
+        <p class="subtitle">Klik gambar untuk memperbesar.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="/images/iPad_Pro_11.png"
+              alt="Tampilan Tablet iPad"
+              class="gallery-img-trigger"
+            />
+            <div class="overlay-icon">+</div>
+          </div>
+          <div class="caption">Dashboard Tablet View</div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="/images/iPhone_Xr.png"
+              alt="Tampilan Mobile"
+              class="gallery-img-trigger"
+            />
+            <div class="overlay-icon">+</div>
+          </div>
+          <div class="caption">Mobile Responsiveness</div>
+        </div>
+
+        <div class="gallery-item">
+          <div class="image-wrapper">
+            <img
+              src="/images/pc.png"
+              alt="Server Console QR"
+              class="gallery-img-trigger"
+            />
+            <div class="overlay-icon">+</div>
+          </div>
+          <div class="caption">Server Console & QR Access</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 NetSentinel Dashboard. Developed for High Efficiency.</p>
+    </footer>
+
+    <div id="imageModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01" />
+      <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

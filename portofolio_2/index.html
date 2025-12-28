@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haytech Store - Toko Komputer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="warning-banner">
+      <div class="warning-content">
+        <span class="warning-text">
+          <strong>⚠️ PERINGATAN DEMO:</strong> Proyek ini dikembangkan sebagai
+          aplikasi native. Versi web ini hanya berfungsi sebagai demonstrasi
+          konseptual dengan fungsionalitas terbatas. Untuk performa penuh dan
+          akses ke seluruh fitur, silakan tinjau repositori proyek di GitHub
+          @edzard9
+        </span>
+        <div class="separator"></div>
+        <span class="warning-text english">
+          <strong>⚠️ DEMO WARNING:</strong> This platform is a web-based
+          demonstration of a native application. Please note that specific
+          features are restricted in this environment. For the full experience
+          and codebase, visit GitHub @edzard9.
+        </span>
+      </div>
+      <button class="close-warning-btn" id="close-warning-btn">&times;</button>
+    </div>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h1>Haytech<br />Store</h1>
+        </div>
+        <nav class="sidebar-nav">
+          <button class="nav-btn active" data-page="dashboard">
+            <i class="fas fa-home"></i> Dashboard
+          </button>
+          <button class="nav-btn" data-page="input">
+            <i class="fas fa-box"></i> Input Barang
+          </button>
+          <button class="nav-btn" data-page="transaksi">
+            <i class="fas fa-shopping-cart"></i> Transaksi
+          </button>
+          <button class="nav-btn" data-page="laporan">
+            <i class="fas fa-chart-bar"></i> Laporan
+          </button>
+          <button class="nav-btn" data-page="qr">
+            <i class="fas fa-qrcode"></i> Generator QR
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="admin-info">
+            <i class="fas fa-user-circle"></i>
+            <span id="current-admin">Tony</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Dashboard Page -->
+        <section id="dashboard-page" class="page active">
+          <div class="page-header">
+            <h2>Dashboard Operasional</h2>
+            <p>Ringkasan kinerja toko hari ini</p>
+          </div>
+
+          <div class="cards-container">
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-boxes" style="color: #3b82f6"></i>
+                <h3>Total Barang</h3>
+              </div>
+              <div class="card-value" id="total-barang">0</div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <i class="fas fa-money-bill-wave" style="color: #10b981"></i>
+                <h3>Penjualan Hari Ini</h3>
+              </div>
+              <div class="card-value" id="penjualan-hari-ini">Rp 0</div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <i
+                  class="fas fa-exclamation-triangle"
+                  style="color: #ef4444"
+                ></i>
+                <h3>Stok Kritis</h3>
+              </div>
+              <div class="card-value" id="stok-kritis">0</div>
+            </div>
+          </div>
+
+          <div id="stok-kritis-warning" class="hidden">
+            <div class="warning-card">
+              <h3>
+                <i class="fas fa-exclamation-circle"></i> Barang Stok Kritis
+              </h3>
+              <div class="table-container">
+                <table id="stok-kritis-table">
+                  <thead>
+                    <tr>
+                      <th>Nama Barang</th>
+                      <th>Kategori</th>
+                      <th>Stok</th>
+                      <th>Harga</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Input Barang Page -->
+        <section id="input-page" class="page">
+          <div class="page-header">
+            <h2>Master Data Barang</h2>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Scan QR Code Barang</h3>
+            </div>
+            <div class="card-body">
+              <button class="btn btn-purple" id="scan-qr-btn">
+                <i class="fas fa-camera"></i> Scan QR Code Barang
+              </button>
+              <div id="scan-result" class="scan-result">
+                Hasil scan akan muncul di sini
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Form Input Barang</h3>
+            </div>
+            <div class="card-body">
+              <form id="barang-form">
+                <div class="form-group">
+                  <label for="nama-barang">Nama Barang</label>
+                  <input
+                    type="text"
+                    id="nama-barang"
+                    placeholder="Masukkan nama barang"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="kategori">Kategori</label>
+                  <select id="kategori">
+                    <!-- Options akan diisi oleh JavaScript -->
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="harga">Harga (Rp)</label>
+                  <input
+                    type="number"
+                    id="harga"
+                    placeholder="Contoh: 1500000"
+                    min="0"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="stok">Stok</label>
+                  <input type="number" id="stok" min="0" value="0" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="deskripsi">Deskripsi</label>
+                  <textarea
+                    id="deskripsi"
+                    rows="3"
+                    placeholder="Masukkan deskripsi barang"
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Simpan Data
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    id="reset-form-btn"
+                  >
+                    <i class="fas fa-redo"></i> Reset
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="refresh-barang-btn"
+                  >
+                    <i class="fas fa-sync"></i> Refresh
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Daftar Barang</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-container">
+                <table id="barang-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nama</th>
+                      <th>Kategori</th>
+                      <th>Harga</th>
+                      <th>Stok</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Transaksi Page -->
+        <section id="transaksi-page" class="page">
+          <div class="page-header">
+            <h2>Kasir / Point of Sales</h2>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Filter dan Pencarian</h3>
+            </div>
+            <div class="card-body">
+              <div class="filter-container">
+                <div class="form-group">
+                  <label for="filter-kategori">Filter Kategori:</label>
+                  <select id="filter-kategori">
+                    <option value="0">Semua Kategori</option>
+                    <!-- Options akan diisi oleh JavaScript -->
+                  </select>
+                </div>
+                <div class="button-group">
+                  <button class="btn btn-purple" id="scan-transaksi-btn">
+                    <i class="fas fa-qrcode"></i> Scan QR Barang
+                  </button>
+                  <button class="btn btn-success" id="refresh-transaksi-btn">
+                    <i class="fas fa-sync"></i> Refresh Barang
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Tambah Barang ke Keranjang</h3>
+            </div>
+            <div class="card-body">
+              <div class="add-to-cart-form">
+                <div class="form-group">
+                  <label for="barang-select">Pilih Barang:</label>
+                  <select id="barang-select">
+                    <!-- Options akan diisi oleh JavaScript -->
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="qty">Qty:</label>
+                  <input type="number" id="qty" min="1" value="1" />
+                </div>
+                <button class="btn btn-success" id="tambah-keranjang-btn">
+                  <i class="fas fa-cart-plus"></i> Tambah ke Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Keranjang Belanja</h3>
+            </div>
+            <div class="card-body">
+              <div class="customer-info">
+                <label for="nama-pembeli">Nama Pembeli:</label>
+                <input
+                  type="text"
+                  id="nama-pembeli"
+                  placeholder="Nama customer"
+                />
+              </div>
+
+              <div class="table-container">
+                <table id="keranjang-table">
+                  <thead>
+                    <tr>
+                      <th>Barang</th>
+                      <th>Harga</th>
+                      <th>Qty</th>
+                      <th>Subtotal</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Data keranjang akan diisi oleh JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="cart-footer">
+                <div class="total-container">
+                  <h3 id="total-keranjang">Total: Rp 0</h3>
+                </div>
+                <div class="cart-actions">
+                  <button class="btn btn-danger" id="kosongkan-keranjang-btn">
+                    <i class="fas fa-trash"></i> Kosongkan Keranjang
+                  </button>
+                  <button class="btn btn-primary" id="proses-bayar-btn">
+                    <i class="fas fa-credit-card"></i> Proses Pembayaran
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Laporan Page -->
+        <section id="laporan-page" class="page">
+          <div class="page-header">
+            <h2>Laporan Penjualan</h2>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Filter Laporan</h3>
+            </div>
+            <div class="card-body">
+              <div class="filter-container">
+                <div class="form-group">
+                  <label for="date-from">Dari:</label>
+                  <input type="date" id="date-from" />
+                </div>
+                <div class="form-group">
+                  <label for="date-to">Sampai:</label>
+                  <input type="date" id="date-to" />
+                </div>
+                <button class="btn btn-primary" id="filter-laporan-btn">
+                  <i class="fas fa-filter"></i> Filter
+                </button>
+                <button class="btn btn-success" id="refresh-laporan-btn">
+                  <i class="fas fa-sync"></i> Refresh
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Data Transaksi</h3>
+            </div>
+            <div class="card-body">
+              <div class="table-container">
+                <table id="laporan-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Tanggal</th>
+                      <th>Pembeli</th>
+                      <th>Metode</th>
+                      <th>Admin</th>
+                      <th>Total</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Data akan diisi oleh JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- QR Generator Page -->
+        <section id="qr-page" class="page">
+          <div class="page-header">
+            <h2>Generator QR Code</h2>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Generate QR Code Barang</h3>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="qr-barang-select">Pilih Barang:</label>
+                <select id="qr-barang-select">
+                  <!-- Options akan diisi oleh JavaScript -->
+                </select>
+              </div>
+              <button class="btn btn-success" id="generate-qr-btn">
+                <i class="fas fa-qrcode"></i> Generate QR Code dari Barang
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Preview QR Code</h3>
+            </div>
+            <div class="card-body">
+              <div class="qr-preview-container">
+                <div id="qr-preview">QR Code akan muncul di sini</div>
+                <button class="btn btn-warning" id="save-qr-btn">
+                  <i class="fas fa-download"></i> Simpan QR Code
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Modal untuk Pembayaran -->
+      <div id="payment-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Pembayaran</h3>
+            <button class="close-btn" id="close-payment-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="payment-total">
+              <p>TOTAL PEMBAYARAN</p>
+              <h2 id="modal-total">Rp 0</h2>
+            </div>
+
+            <div class="form-group">
+              <label for="payment-method">Metode Pembayaran:</label>
+              <select id="payment-method">
+                <option value="Cash">Cash</option>
+                <option value="Transfer Bank">Transfer Bank</option>
+                <option value="QRIS">QRIS</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Admin:</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="admin" value="Tony" checked />
+                  <span>Tony</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="admin" value="Jesicca" />
+                  <span>Jesicca</span>
+                </label>
+              </div>
+            </div>
+
+            <div id="cash-payment-section" class="hidden">
+              <div class="form-group">
+                <label for="dibayar">Jumlah yang Dibayar:</label>
+                <input
+                  type="number"
+                  id="dibayar"
+                  placeholder="Masukkan jumlah uang yang diterima"
+                />
+              </div>
+              <div id="kembalian-info">
+                <p>Kembalian: <span id="kembalian-amount">Rp 0</span></p>
+                <p id="kurang-info" class="hidden"></p>
+              </div>
+            </div>
+
+            <div id="non-cash-payment-info" class="hidden">
+              <div class="info-box" id="payment-info-content">
+                <!-- Informasi pembayaran akan diisi -->
+              </div>
+              <div class="form-group">
+                <label for="bukti-pembayaran">Bukti Pembayaran:</label>
+                <input
+                  type="file"
+                  id="bukti-pembayaran"
+                  accept=".png,.jpg,.jpeg,.pdf"
+                />
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <button class="btn btn-danger" id="cancel-payment-btn">
+                Batal
+              </button>
+              <button class="btn btn-success" id="confirm-payment-btn">
+                <i class="fas fa-check"></i> Proses Pembayaran
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal untuk Detail Transaksi -->
+      <div id="detail-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Detail Transaksi</h3>
+            <button class="close-btn" id="close-detail-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div id="detail-content">
+              <!-- Detail transaksi akan diisi -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal untuk QR Scanner -->
+      <div id="qr-scanner-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>QR Scanner</h3>
+            <button class="close-btn" id="close-qr-scanner">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div id="scanner-container">
+              <video id="qr-video" width="100%" height="300"></video>
+              <div id="scanner-result"></div>
+            </div>
+            <div class="modal-actions">
+              <button class="btn btn-danger" id="stop-scanner-btn">
+                Stop Scanner
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toast Notification -->
+      <div id="toast" class="toast hidden">
+        <div class="toast-content">
+          <span id="toast-message"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include jsQR library for QR scanning -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
